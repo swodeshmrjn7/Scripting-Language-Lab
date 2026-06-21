@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Largest and Smallest Using While Loop</title>
+</head>
+<body>
+
+    <h2>Largest and Smallest Number</h2>
+    <button onclick="findNumbers()">Find Number</button>
+
+    <p id="result"></p>
+
+    <script>
+
+        function findNumbers() {
+
+            let a = [2,19,37,48,45,94,12,23,78];
+
+            let smallest = a[0];
+            let largest = a[0];
+
+            let i = 1;
+
+            while(i < a.length) {
+
+                if(a[i] < smallest) {
+                    smallest = a[i];
+                }
+
+                if(a[i] > largest) {
+                    largest = a[i];
+                }
+
+                i++;
+            }
+
+            document.getElementById("result").innerHTML =
+            "Smallest Number = " + smallest +
+            "<br>Largest Number = " + largest;
+        }
+
+    </script>
+
+</body>
+</html>
