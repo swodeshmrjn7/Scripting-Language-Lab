@@ -1,1 +1,0 @@
-alert("External JS files to trigger an alert");
