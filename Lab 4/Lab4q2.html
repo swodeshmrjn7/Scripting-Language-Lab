@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even Bold and Odd Normal</title>
+</head>
+<body>
+
+<h2>Display Even and Odd Numbers</h2>
+
+<label>First Number:</label>
+<input type="text" id="num1"><br><br>
+
+<label>Second Number:</label>
+<input type="text" id="num2"><br><br>
+
+<button onclick="displayResult()">Display</button>
+
+<p id="result"></p>
+
+<script>
+function displayResult() {
+
+    let first = parseInt(document.getElementById("num1").value);
+    let second = parseInt(document.getElementById("num2").value);
+
+    if (isNaN(first) || isNaN(second)) {
+        document.getElementById("result").innerHTML =
+        "Please enter valid numbers.";
+        return;
+    }
+
+    if (first <= 0 || second <= 0) {
+        document.getElementById("result").innerHTML =
+        "Please enter positive numbers only.";
+        return;
+    }
+
+    if (first >= second) {
+        document.getElementById("result").innerHTML =
+        "The first number must be smaller than the second number.";
+        return;
+    }
+
+    let output = "";
+
+    for (let i = first; i <= second; i++) {
+
+        if (i % 2 == 0) {
+            output += "<b>" + i + "</b><br>";
+        } else {
+            output += i + "<br>";
+        }
+
+    }
+
+    document.getElementById("result").innerHTML = output;
+}
+</script>
+
+</body>
+</html>
