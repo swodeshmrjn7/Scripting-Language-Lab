@@ -1,11 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cookie Example</title>
 </head>
 <body>
-    <h1>Robin</h1>
+
+<h2>Cookie Example</h2>
+
+<input type="text" id="name" placeholder="Enter your name">
+<button onclick="saveName()">Save Name</button>
+
+<p id="message"></p>
+
+<script>
+
+function saveName() {
+
+    let name = document.getElementById("name").value;
+
+    document.cookie = "username=" + name + "; max-age=86400";
+
+    document.getElementById("message").innerHTML =
+    "Welcome, " + name + "! Your name has been saved.";
+
+}
+
+window.onload = function () {
+
+    let cookie = document.cookie;
+
+    if(cookie != ""){
+
+        let username = cookie.split("=")[1];
+
+        document.getElementById("message").innerHTML =
+        "Welcome back, " + username + "!";
+
+    }
+
+}
+
+</script>
+
 </body>
 </html>
