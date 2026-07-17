@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiplication Table</title>
+    
+    <script>
+        function showTable() {
+           let number = parseInt(prompt("Enter a number:"));
+           let table = "";
+ 
+           for (let i = 1; i <= 10; i++) {
+              table += number + " x " + i + " = " + (number * i) + "\n";
+           }
+
+           alert(table);
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Multiplication Table Generator</h2>
+    <button onclick="showTable()">Generate Table</button>
+
+</body>
+</html>
